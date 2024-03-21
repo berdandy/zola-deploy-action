@@ -15,7 +15,7 @@ RUN apt-get update && apt-get install -y wget git xz-utils
 
 RUN wget -q -O - \
 "https://github.com/berdandy/azola/releases/download/v0.18.1-aw2.5/zola-x86_64-unknown-linux-gnu.tar.xz" \
-| tar xJf - -C /usr/local/bin
+| tar xJf - --strip-components 1 -C /usr/local/bin
 
 COPY entrypoint.sh /entrypoint.sh
 
