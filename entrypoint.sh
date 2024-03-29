@@ -69,18 +69,18 @@ main() {
         git submodule update --init --recursive
     fi
 
-    version=$(zola --version)
+    version=$(azola --version)
     remote_repo="https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@${GITHUB_HOSTNAME}/${TARGET_REPOSITORY}.git"
     remote_branch=$PAGES_BRANCH
 
     echo "Using $version"
 
     echo Building with flags: ${BUILD_FLAGS:+"$BUILD_FLAGS"}
-    zola build ${BUILD_FLAGS:+$BUILD_FLAGS}
+    azola build ${BUILD_FLAGS:+$BUILD_FLAGS}
 
     if ${CHECK_LINKS}; then
         echo "Checking links with flags: ${CHECK_FLAGS:+$CHECK_FLAGS}"
-        zola check ${CHECK_FLAGS:+$CHECK_FLAGS}
+        azola check ${CHECK_FLAGS:+$CHECK_FLAGS}
     fi
 
     if ${BUILD_ONLY}; then
