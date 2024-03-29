@@ -14,7 +14,7 @@ ENV LANGUAGE en_US.UTF-8
 RUN apt-get update && apt-get install -y wget git xz-utils
 
 RUN wget -q -O - \
-"https://github.com/berdandy/azola/releases/latest/download/zola-x86_64-unknown-linux-gnu.tar.xz" \
+"https://github.com/berdandy/azola/releases/latest/download/azola-x86_64-unknown-linux-gnu.tar.xz" \
 | tar xJf - --strip-components 1 -C /usr/local/bin
 
 COPY entrypoint.sh /entrypoint.sh
